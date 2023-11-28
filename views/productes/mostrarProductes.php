@@ -20,7 +20,7 @@
 <body>
     <!--content start-->
     <div class="container mt-5">
-        <h1>Llistat de Llibres</h1>
+        <h1>Llistat de Productes</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
