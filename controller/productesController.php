@@ -9,6 +9,5 @@ class productesController
         $productes = $producte->mostrar_tot("productes");
 
         require_once "view/mostrarProductes.php";
-        
     }
 }
