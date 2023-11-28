@@ -8,7 +8,7 @@ class ModelBase{
     public function __construct(){
         $this->db = database::conectar();
     }
-
+    
     public function mostrar_tot($tabla){
         $query = $this->db->query("SELECT * FROM $tabla");
         return $query;

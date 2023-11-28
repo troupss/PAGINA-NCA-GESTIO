@@ -43,9 +43,4 @@ class productes extends ModelBase{
     public function setProducte_quantitat($producte_quantitat){
         $this->producte_quantitat = $producte_quantitat;
     }
-
-    public function mostrar_tot($tabla){
-        $query = $this->db->query("SELECT * FROM $tabla");
-        return $query;
-    }
 }

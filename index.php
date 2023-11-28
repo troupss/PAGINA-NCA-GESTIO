@@ -25,7 +25,7 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://troups.cat/NCA_gestioStock/index.php?controller=productes&action=mostrar_Productes">Productes</a>
+                        <a class="nav-link active" aria-current="page" href="index.php?controller=productes&action=mostrar_Productes">Productes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Prestecs</a>

@@ -5,9 +5,12 @@ require_once "model/ModelBase.php";
 class productesController
 {
     public function mostrar_Productes(){
+        echo "hola1";
         $producte = new productes();
-        $productes = $producte->mostrar_tot("productes");
+        echo "hola2";
 
-        require_once "view/mostrarProductes.php";
+        $productes = $producte->mostrar_tot("NCA_productes");
+
+        require_once "views/productes/mostrarProductes.php";
     }
 }
