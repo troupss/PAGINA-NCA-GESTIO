@@ -25,13 +25,10 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php?controller=llibres&action=mostrar_tots_els_llibres">--</a>
+                        <a class="nav-link active" aria-current="page" href="#">Productes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php?controller=usuari&action=mostrar_tots_els_usuaris">--</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php?controller=prestecs&action=mostrar_tots_els_prestecs">--</a>
+                        <a class="nav-link active" aria-current="page" href="#">Prestecs</a>
                     </li>
             </div>
         </div>
