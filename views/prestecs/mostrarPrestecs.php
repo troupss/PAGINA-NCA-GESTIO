@@ -3,19 +3,20 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>-</th>
-                    <th>-</th>
-                    <th>-</th>
-                    <th>-</th>
+                    <th>Id del Producte</th>
+                    <th>Nom del Producte</th>
+                    <th>Armari Id</th>
+                    <th>Quantitat del Producte</th>
                 </tr>
             </thead>
             <tbody>
-                <?php while ($productes = $productes->fetch_object()) : ?>
+                <?php while ($prestecs = $prestecs->fetch_object()) : ?>
                     <tr>
-                        <td><?= $productes->producte_id ?></td>
-                        <td><?= $productes->producte_nom ?></td>
-                        <td><?= $productes->producte_armari_id ?></td>
-                        <td><?= $productes->producte_quantitat ?></td>
+                        <td><?= $prestecs->prestecs_id ?></td>
+                        <td><?= $prestecs->prestecs_nom_producte ?></td>
+                        <td><?= $prestecs->prestecs_producte_id ?></td>
+                        <td><?= $prestecs->prestecs_quantitat ?></td>
+                        <td><?= $prestecs->prestecs_nom_destinatari ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
