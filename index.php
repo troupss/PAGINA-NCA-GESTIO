@@ -28,7 +28,7 @@
                         <a class="nav-link active" aria-current="page" href="index.php?controller=productes&action=mostrar_Productes">Productes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Prestecs</a>
+                        <a class="nav-link active" aria-current="page" href="index.php?controller=prestecs&action=mostrar_Prestecs">Prestecs</a>
                     </li>
             </div>
         </div>

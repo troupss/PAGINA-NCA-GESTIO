@@ -1,5 +1,5 @@
 <?php 
-require_once 'ModelBase.php';
+require_once "ModelBase.php";
 
 class productes extends ModelBase{
 
@@ -12,35 +12,85 @@ class productes extends ModelBase{
         parent::__construct();
     }
 
-    public function getProducte_id(){
+    
+
+    /**
+     * Get the value of producte_id
+     */ 
+    public function getProducte_id()
+    {
         return $this->producte_id;
     }
 
-    public function setProducte_id($producte_id){
+    /**
+     * Set the value of producte_id
+     *
+     * @return  self
+     */ 
+    public function setProducte_id($producte_id)
+    {
         $this->producte_id = $producte_id;
+
+        return $this;
     }
 
-    public function getProducte_nom(){
+    /**
+     * Get the value of producte_nom
+     */ 
+    public function getProducte_nom()
+    {
         return $this->producte_nom;
     }
 
-    public function setProducte_nom($producte_nom){
+    /**
+     * Set the value of producte_nom
+     *
+     * @return  self
+     */ 
+    public function setProducte_nom($producte_nom)
+    {
         $this->producte_nom = $producte_nom;
+
+        return $this;
     }
 
-    public function getProducte_armari_id(){
+    /**
+     * Get the value of producte_armari_id
+     */ 
+    public function getProducte_armari_id()
+    {
         return $this->producte_armari_id;
     }
 
-    public function setProducte_armari_id($producte_armari_id){
+    /**
+     * Set the value of producte_armari_id
+     *
+     * @return  self
+     */ 
+    public function setProducte_armari_id($producte_armari_id)
+    {
         $this->producte_armari_id = $producte_armari_id;
+
+        return $this;
     }
 
-    public function getProducte_quantitat(){
+    /**
+     * Get the value of producte_quantitat
+     */ 
+    public function getProducte_quantitat()
+    {
         return $this->producte_quantitat;
     }
 
-    public function setProducte_quantitat($producte_quantitat){
+    /**
+     * Set the value of producte_quantitat
+     *
+     * @return  self
+     */ 
+    public function setProducte_quantitat($producte_quantitat)
+    {
         $this->producte_quantitat = $producte_quantitat;
+
+        return $this;
     }
 }
