@@ -6,9 +6,12 @@ class productesController
 {
     public function mostrar_Productes(){
         $productes = new productes();
-        echo "hola1";
-        $producte = $productes->mostrar_tot("productes");
-        echo "hola2";
+        $producte = $productes->mostrar_tot("NCA_productes");
+
         require_once "views/productes/mostrarProductes.php";
+    }
+
+    public function afegir_Producte(){
+        require_once "views/productes/afegirProductes.php";
     }
 }

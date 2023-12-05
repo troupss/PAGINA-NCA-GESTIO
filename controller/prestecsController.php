@@ -6,7 +6,7 @@ class prestecsController
 {
     public function mostrar_Prestecs(){
         $prestecs = new prestecs();
-        $prestec = $prestecs->mostrar_tot("prestecs");
+        $prestec = $prestecs->mostrar_tot("NCA_prestecs");
 
         require_once "views/prestecs/mostrarPrestecs.php";
     }
