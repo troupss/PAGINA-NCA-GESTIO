@@ -108,15 +108,24 @@ class prestecs extends ModelBase{
 
     public function insertar(){
         $connexio = database::conectar();
-        $sql = "INSERT INTO NCA_prestecs (prestecs_nom_producte, prestecs_producte_id, prestecs_quantitat, prestecs_nom_destinatari) VALUES ('$this->prestecs_id', '$this->prestecs_producte_id', '$this->prestecs_quantitat', '$this->prestecs_nom_destinatari' ')";
+        $sql = "INSERT INTO NCA_prestecs (prestecs_nom_producte, prestecs_producte_id, prestecs_quantitat, prestecs_nom_destinatari) VALUES ('$this->prestecs_nom_producte', '$this->prestecs_producte_id', '$this->prestecs_quantitat', '$this->prestecs_nom_destinatari' ')";
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
 
-    public function retornar(){
+    public function modificar(){
         $connexio = database::conectar();
-       // $sql = "UPDATE prestec SET retornat = '1' WHERE codi = '$this->codi'";
-        //$result = mysqli_query($connexio, $sql);
-        //return $result;
+        $sql = "UPDATE prestecs SET prestecs_nom_producte = '$this->prestecs_nom_producte', prestecs_producte_id = '$this->prestecs_producte_id', prestecs_quantitat = '$this->prestecs_quantitat', prestecs_nom_destinatari = '$this->prestecs_nom_destinatari' WHERE id = '$this->prestecs_id'";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
     }
+
+    public function mostrar(){
+        $connexio = database::conectar();
+        $sql = "SELECT * FROM NCA_prestecs";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
+
+       
 }
