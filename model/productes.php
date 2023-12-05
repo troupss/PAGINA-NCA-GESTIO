@@ -95,8 +95,10 @@ class productes extends ModelBase{
     }
 
     public function insertar_Producte(){
-        $sql = "INSERT INTO NCA_productes VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}');";
+        $sql = "INSERT INTO NCA_productes (`producte_nom`, `producte_armari_id`, `producte_quantitat`) VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}');";
+        var_dump($sql);
         $guardar = $this->db->query($sql);
+
         return $guardar;
         
     }

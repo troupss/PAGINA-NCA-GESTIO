@@ -18,8 +18,8 @@ class productesController
         if(isset($_POST)){
             $producte = new productes();
             $producte->setProducte_nom($_POST['producte_nom']);
-            $producte->setProducte_armari_id($_POST['producte_armari_id']);
-            $producte->setProducte_quantitat($_POST['producte_quantitat']);
+            $producte->setProducte_armari_id($_POST['armari_id']);
+            $producte->setProducte_quantitat($_POST['quantitat']);
             //FALTE LA FOTO
             $guardar = $producte->insertar_Producte("NCA_productes");
 
