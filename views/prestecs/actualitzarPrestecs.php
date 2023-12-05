@@ -1,6 +1,6 @@
 <div class="container">
         <div class="titulo">Actualitzar Usuaris</div>
-        <form class="form-control" action="index.php?controller=prestecsController&action=actualitzar" method="post">
+        <form class="form-control" action="index.php?controller=prestecs&action=actualitzar" method="post">
             <?php 
             @session_start();
  
