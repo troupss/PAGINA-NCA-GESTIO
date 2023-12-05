@@ -29,14 +29,27 @@ class prestecsController
 
     }
 
-    public function actualizar(){
+    public function editar() {
 
-        $PrestecId = $_GET["prestec_id"];
         $prestecs = new prestecs();
-        $prestecs->setPrestecsId($PrestecId);
-        $prestecs->retornar();
+        $prestecs->setPrestecsId($_POST["prestecs_id"]);
+        $prestecs->setPrestecsNomProducte($_POST["prestecs_nom_producte"]);
+        $prestecs->setPrestecsProducteId($_POST["prestecs_producte_id"]);
+        $prestecs->setPrestecsQuantitat($_POST["prestecs_quantitat"]);
+        $prestecs->setPrestecsNomDestinatari($_POST["prestecs_nom_destinatari"]);
+        $prestecs->modificar();
 
         header("Location: index.php?controller=prestec&action=mostrartot");
+        
+    }
+
+    public function actualizar(){
+
+        
+        $prestecs = new prestecs();
+        $prestecs->setPrestecsId($_GET["id"]);
+        $row = $prestecs->mostrar();
+        require_once "views/prestecs/actualitzarPrestecs.php";
     }
 
 }
