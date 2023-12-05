@@ -7,6 +7,7 @@ class productes extends ModelBase{
     public $producte_nom;
     public $producte_armari_id;
     public $producte_quantitat;
+    public $producte_foto;
 
     public function __construct(){
         parent::__construct();
@@ -93,13 +94,34 @@ class productes extends ModelBase{
 
         return $this;
     }
+    /**
+     * Get the value of producte_foto
+     */ 
+    public function getProducte_foto()
+    {
+        return $this->producte_foto;
+    }
+
+    /**
+     * Set the value of producte_foto
+     *
+     * @return  self
+     */ 
+    public function setProducte_foto($producte_foto)
+    {
+        $this->producte_foto = $producte_foto;
+
+        return $this;
+    }
 
     public function insertar_Producte(){
-        $sql = "INSERT INTO NCA_productes (`producte_nom`, `producte_armari_id`, `producte_quantitat`) VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}');";
+        $sql = "INSERT INTO NCA_productes (`producte_nom`, `producte_armari_id`, `producte_quantitat`, `foto` ) VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}', '{$this->getProducte_foto()}');";
         var_dump($sql);
         $guardar = $this->db->query($sql);
-
+        
         return $guardar;
         
     }
+
+    
 }
