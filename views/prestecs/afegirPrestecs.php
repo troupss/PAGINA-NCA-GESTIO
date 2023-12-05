@@ -19,7 +19,7 @@
 <!--content start-->
 <div class="container">
     <div class="titulo">Afegir Prestecs</div>
-    <form class="form-control" action="index.php?controller=prestecsController&action=crear" method="post">
+    <form class="form-control" action="index.php?controller=prestecs&action=crear" method="post">
 
         <label for="prestecs_nom_producte">prestecs_nom_producte</label>
         <input class="form-control" type="text" name="prestecs_nom_producte" id="prestecs_nom_producte" required>

@@ -108,7 +108,12 @@ class prestecs extends ModelBase{
 
     public function insertar(){
         $connexio = database::conectar();
+<<<<<<< HEAD
         $sql = "INSERT INTO NCA_prestecs (prestecs_nom_producte, prestecs_producte_id, prestecs_quantitat, prestecs_nom_destinatari) VALUES ('$this->prestecs_nom_producte', '$this->prestecs_producte_id', '$this->prestecs_quantitat', '$this->prestecs_nom_destinatari' ')";
+=======
+        $sql = "INSERT INTO NCA_prestecs (prestecs_nom_producte, prestecs_producte_id, prestecs_quantitat, prestecs_nom_destinatari) VALUES ('$this->prestecs_nom_producte', '$this->prestecs_producte_id', '$this->prestecs_quantitat', '$this->prestecs_nom_destinatari')";
+        var_dump($sql);
+>>>>>>> 4f999b2203b7a3386b2fda74531f3954793f773c
         $result = mysqli_query($connexio, $sql);
         return $result;
     }

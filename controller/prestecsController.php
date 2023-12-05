@@ -16,16 +16,16 @@ class prestecsController
     }
 
     public function crear(){
-        $prestecs = new prestecs();
-        $prestecs->setPrestecsId($_POST["prestecs_id"]);
-        $prestecs->setPrestecsNomProducte($_POST["prestecs_nom_producte"]);
-        $prestecs->setPrestecsProducteId($_POST["prestecs_producte_id"]);
-        $prestecs->setPrestecsQuantitat($_POST["prestecs_quantitat"]);
-        $prestecs->setPrestecsNomDestinatari($_POST["prestecs_nom_destinatari"]);
-        $prestecs->insertar();
+        if(isset($_POST)){
+            $prestecs = new prestecs();
+            $prestecs->setPrestecsNomProducte($_POST['prestecs_nom_producte']);
+            $prestecs->setPrestecsProducteId($_POST['prestecs_producte_id']);
+            $prestecs->setPrestecsQuantitat($_POST['prestecs_quantitat']);
+            $prestecs->setPrestecsNomDestinatari($_POST['prestecs_nom_destinatari']);
+            $guardar = $prestecs->insertar("NCA_prestecs");
 
-        header("Location: index.php?controller=prestec&action=mostrartot");
-
+            header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
+        }
 
     }
 
