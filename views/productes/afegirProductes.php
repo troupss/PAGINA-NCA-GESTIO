@@ -42,37 +42,14 @@
                                 <input type="number" name="quantitat" placeholder="Introdueix la quantitat del producte" class="form-control" required="">
                             </div>
                             <div class="form-group mb-3">
-                                <!--<div id="captureForm" action="tuscript.php" method="post">
-                                    <video id="video" width="640" height="480" autoplay></video>
-                                    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
-                                    <input type="hidden" name="image" id="imageInput">
-
-                                    
-                                    <button type="button" id="captureBtn">Capturar Foto</button>
-                                    <button type="submit">Enviar Foto</button>
-
-                                    <script>
-                                        navigator.mediaDevices.getUserMedia({
-                                                video: true
-                                            })
-                                            .then(stream => {
-                                                document.getElementById('video').srcObject = stream;
-                                            })
-                                            .catch(error => console.error('Error al acceder a la cámara: ', error));
-
-                                        document.getElementById('captureBtn').addEventListener('click', function() {
-                                            var video = document.getElementById('video');
-                                            var canvas = document.getElementById('canvas');
-                                            var context = canvas.getContext('2d');
-                                            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-                                            // Convertir la imagen a base64 y asignarla al campo de entrada del formulario
-                                            var imageData = canvas.toDataURL('image/png');
-                                            document.getElementById('imageInput').value = imageData;
-                                        });
-                                    </script>
-                                </div>-->
+                                <label for="fname">Opción de Foto</label>
+                                <div class="d-flex">
+                                    <button class="btn btn-primary mr-2" onclick="capturePhoto()">Tomar Foto</button>
+                                    <input type="file" name="foto" id="fileInput" class="form-control">
+                                </div>
                             </div>
+
+                            <!-- ... (tu código existente) ... -->
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">
                                 <button class="btn btn-primary btn-block" type="submit" name="submit" id="submit">Insertar</button>
@@ -83,6 +60,52 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function capturePhoto() {
+            const video = document.getElementById('cameraView');
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+
+            // Configurar la resolución del canvas para que coincida con la del video
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // Dibujar el video en el canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Obtener la imagen en formato base64
+            const capturedImageData = canvas.toDataURL('image/jpeg');
+
+            // Mostrar la imagen en el campo de texto
+            document.getElementById('capturedImage').src = capturedImageData;
+
+            // Actualizar el campo oculto con los datos de la imagen
+            document.getElementById('capturedImageData').value = capturedImageData;
+
+            // Detener la reproducción del video
+            video.pause();
+
+            // Prevenir el envío predeterminado del formulario
+            event.preventDefault();
+        }
+
+        // Agrega un listener al cambio del input de archivo
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const fileInput = e.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                // Mostrar la imagen seleccionada desde el dispositivo
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('capturedImage').src = e.target.result;
+                    document.getElementById('capturedImageData').value = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 
     <a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Volver</button></a>
     <?php

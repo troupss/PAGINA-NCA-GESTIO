@@ -38,7 +38,7 @@
                         <td><?= $productes->producte_nom ?></td>
                         <td><?= $productes->producte_armari_id ?></td>
                         <td><?= $productes->producte_quantitat ?></td>
-                        <td><img src="img/<?=$productes->foto?>" width="50px" height="50px"></td>
+                        <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
