@@ -14,4 +14,16 @@ class productesController
     public function afegir_Producte(){
         require_once "views/productes/afegirProductes.php";
     }
+    public function guardar_Producte(){
+        if(isset($_POST)){
+            $producte = new productes();
+            $producte->setProducte_nom($_POST['producte_nom']);
+            $producte->setProducte_armari_id($_POST['producte_armari_id']);
+            $producte->setProducte_quantitat($_POST['producte_quantitat']);
+            //FALTE LA FOTO
+            $guardar = $producte->insertar_Producte("NCA_productes");
+
+            header("Location: index.php?controller=productes&action=mostrar_Productes");
+        }
+    }
 }
