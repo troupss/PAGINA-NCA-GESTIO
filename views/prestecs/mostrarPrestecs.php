@@ -23,9 +23,5 @@
                 <?php endwhile; ?>
             </tbody>
         </table>
-<<<<<<< HEAD
         <a href="index.php?controller=prestecsController&action=afegir_Prestecs"><button class="btn btn-outline-primary">Afegir prestec</button></a>
-=======
-        <a href="index.php?controller=prestecs&action=afegir_Prestecs"><button class="btn btn-outline-primary">Afegir prestec</button></a>
->>>>>>> 4f999b2203b7a3386b2fda74531f3954793f773c
     </div>
