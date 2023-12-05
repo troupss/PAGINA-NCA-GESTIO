@@ -18,10 +18,10 @@
                         <td><?= $prestecs->prestecs_producte_id ?></td>
                         <td><?= $prestecs->prestecs_quantitat ?></td>
                         <td><?= $prestecs->prestecs_nom_destinatari ?></td>
-                        <td><a href="index.php?controller=prestecsController&action=actualizar&id=<?= $prestecs->pretecs_id ?>">Actualitzar</a></td>
+                        <td><a href="index.php?controller=prestecs&action=actualizar&id=<?= $prestecs->pretecs_id ?>">Actualitzar</a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <a href="index.php?controller=prestecsController&action=afegir_Prestecs"><button class="btn btn-outline-primary">Afegir prestec</button></a>
+        <a href="index.php?controller=prestecs&action=afegir_Prestecs"><button class="btn btn-outline-primary">Afegir prestec</button></a>
     </div>
