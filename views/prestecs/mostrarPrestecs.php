@@ -3,14 +3,15 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Id del Producte</th>
+                    <th>Prestec Id</th>
                     <th>Nom del Producte</th>
-                    <th>Armari Id</th>
+                    <th>Producte Id</th>
                     <th>Quantitat del Producte</th>
+                    <th>Nom del Destinatari</th>
                 </tr>
             </thead>
             <tbody>
-                <?php while ($prestecs = $prestecs->fetch_object()) : ?>
+                <?php while ($prestecs = $prestec->fetch_object()) : ?>
                     <tr>
                         <td><?= $prestecs->prestecs_id ?></td>
                         <td><?= $prestecs->prestecs_nom_producte ?></td>
@@ -21,5 +22,5 @@
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <a href="#"><button class="btn btn-outline-primary">Afegir llibres</button></a>
+        <a href="#"><button class="btn btn-outline-primary">Afegir prestec</button></a>
     </div>
