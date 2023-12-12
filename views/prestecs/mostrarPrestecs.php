@@ -8,6 +8,7 @@
                     <th>Producte Id</th>
                     <th>Quantitat del Producte</th>
                     <th>Nom del Destinatari</th>
+                    <th>Opcions</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +19,8 @@
                         <td><?= $prestecs->prestecs_producte_id ?></td>
                         <td><?= $prestecs->prestecs_quantitat ?></td>
                         <td><?= $prestecs->prestecs_nom_destinatari ?></td>
-                        <td><a href="index.php?controller=prestecs&action=actualitzarPrestec&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a></td>
-                        <td><a href="index.php?controller=prestecs&action=EsborrarPrestec&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Retornat</button></a></td>
+                        <td><a href="index.php?controller=prestecs&action=actualitzarPrestec&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a> &nbsp;
+                        <a href="index.php?controller=prestecs&action=EsborrarPrestec&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Retornat</button></a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

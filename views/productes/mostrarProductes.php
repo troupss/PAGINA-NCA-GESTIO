@@ -29,6 +29,7 @@
                     <th>Armari ID</th>
                     <th>Quantitat</th>
                     <th>Foto</th>
+                    <th>Opcions</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,10 +41,8 @@
                         <td><?= $productes->producte_quantitat ?></td>
                         <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
                         <td>
-                            <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a>
-                        </td>
-
-                        <td>
+                            <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a> &nbsp;
+                        
                             <a href="index.php?controller=productes&action=EsborrarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Eliminar</button></a>
                         </td>
                     </tr>

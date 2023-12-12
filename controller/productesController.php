@@ -60,11 +60,11 @@ class productesController
         header("Location: index.php?controller=productes&action=mostrar_Productes");
     }
 
-    public function Esborrar(){
+    public function EsborrarProducte(){
         $id = $_GET["id"];
         $productes = new productes();
         $productes->setProducte_id($id);
         $productes->eliminar();
-        header("Location: index.php?controller=prestecs&action=mostrar_Productes");
+        header("Location: index.php?controller=productes&action=mostrar_Productes");
     }
 }
