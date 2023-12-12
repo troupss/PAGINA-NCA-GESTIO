@@ -123,5 +123,17 @@ class productes extends ModelBase{
         
     }
 
+    public function mostrar(){
+        $sql = "SELECT * FROM NCA_productes WHERE producte_id = {$this->getProducte_id()}";
+        $producte = $this->db->query($sql);
+        return $producte->fetch_object();
+    }
+
+    public function modificar(){
+        $sql = "UPDATE NCA_productes SET producte_nom = '{$this->getProducte_nom()}', producte_armari_id = '{$this->getProducte_armari_id()}', producte_quantitat = '{$this->getProducte_quantitat()}' WHERE producte_id = {$this->getProducte_id()}";
+        $guardar = $this->db->query($sql);
+        return $guardar;
+    }
+
     
 }

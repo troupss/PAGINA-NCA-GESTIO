@@ -23,6 +23,10 @@ class prestecsController
             $prestecs->setPrestecsQuantitat($_POST['prestecs_quantitat']);
             $prestecs->setPrestecsNomDestinatari($_POST['prestecs_nom_destinatari']);
             $guardar = $prestecs->insertar();
+<<<<<<< HEAD
+=======
+            echo "hola1";
+>>>>>>> 66155b0a6ed28a35de9a3edc5ce9e5f02dee15a5
 
             header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
         }

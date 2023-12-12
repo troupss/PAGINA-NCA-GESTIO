@@ -19,7 +19,7 @@ class productesController
     public function guardar_Producte()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-            // Manejar otros datos del formulario
+            
             $producte = new productes();
             $producte->setProducte_nom($_POST['producte_nom']);
             $producte->setProducte_armari_id($_POST['armari_id']);
@@ -33,9 +33,30 @@ class productesController
             move_uploaded_file($directorioTemp, $ruta . $nom);
             $producte->setProducte_foto($nom);
 
-            $guardar = $producte->insertar_Producte("NCA_productes");
+            $guardar = $producte->insertar_Producte();
 
             header("Location: index.php?controller=productes&action=mostrar_Productes");
         }
+    }
+
+    public function actualitzar_Producte(){
+        $id = $_GET["id"];
+        $productes = new productes();
+        $productes->setProducte_id($id);
+        $producte = $productes->mostrar();
+
+        require_once "views/productes/actualitzarProductes.php";
+    }
+
+    public function actualitzarAction(){
+        $productes = new productes();
+        $productes->setProducte_id($_POST["producte_id"]);
+        $productes->setProducte_nom($_POST["producte_nom"]);
+        $productes->setProducte_armari_id($_POST["producte_armari_id"]);
+        $productes->setProducte_quantitat($_POST["producte_quantitat"]);
+        //$productes->setProducte_foto($_POST["foto"]);
+        $productes->modificar();
+
+        header("Location: index.php?controller=productes&action=mostrar_Productes");
     }
 }
