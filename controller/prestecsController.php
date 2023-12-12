@@ -23,8 +23,6 @@ class prestecsController
             $prestecs->setPrestecsQuantitat($_POST['prestecs_quantitat']);
             $prestecs->setPrestecsNomDestinatari($_POST['prestecs_nom_destinatari']);
             $guardar = $prestecs->insertar();
-            echo "hola1";
-
             header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
         }
 
@@ -47,6 +45,14 @@ class prestecsController
         $prestecs->setPrestecsNomDestinatari($_POST["prestecs_nom_destinatari"]);
         $prestecs->modificar();
 
+        header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
+    }
+
+    public function EsborrarPrestec(){
+        $id = $_GET["id"];
+        $prestecs = new prestecs();
+        $prestecs->setPrestecsId($id);
+        $prestecs->eliminar();
         header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
     }
 

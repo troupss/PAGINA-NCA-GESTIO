@@ -33,12 +33,12 @@
                         <form action="index.php?controller=prestecs&action=actualitzarAction" method="post">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
-                                <label for="fname">NOM</label>
+                                <label for="fname">Nom Producte</label>
                                 <input type="hidden" name="id" value="<?= $prestecs->prestecs_id ?>">
                                 <input type="text" name="prestecs_nom_producte" class="form-control" value="<?= $prestecs->prestecs_nom_producte ?>">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="fname">Producte ID</label>
+                                <label for="fname">ID del Producte</label>
                                 <input type="text" name="prestecs_producte_id" class="form-control" value="<?= $prestecs->prestecs_producte_id ?>">
                             </div>
                             <div class="form-group mb-3">
@@ -46,7 +46,7 @@
                                 <input type="text" name="prestecs_quantitat" class="form-control" value="<?= $prestecs->prestecs_quantitat?>">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="fname">Destinatari</label>
+                                <label for="fname">Nom del Destinatari</label>
                                 <input type="text" name="prestecs_nom_destinatari" class="form-control" value="<?= $prestecs->prestecs_nom_destinatari ?>">
                             </div>
                             <br>

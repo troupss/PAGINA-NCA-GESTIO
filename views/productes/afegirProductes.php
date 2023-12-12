@@ -53,14 +53,16 @@
                             <div class="form-group mb-0 d-flex justify-content-between">
                                 <button class="btn btn-primary btn-block" type="submit" name="submit" id="submit">Insertar</button>
                             </div>
-                        </form>
+                            
+                        </form> 
+                        <br><a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Volver</button></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
+     <!-- <script>
         function capturePhoto() {
             const video = document.getElementById('cameraView');
             const canvas = document.createElement('canvas');
@@ -103,10 +105,8 @@
                 };
                 reader.readAsDataURL(file);
             }
-        });
-    </script>
-
-    <a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Volver</button></a>
+        }); 
+    </script> -->
     <?php
     ?>
 

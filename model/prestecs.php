@@ -128,5 +128,12 @@ class prestecs extends ModelBase{
         return $result;
     }
 
+    public function eliminar(){
+        $connexio = database::conectar();
+        $sql = "DELETE FROM NCA_prestecs WHERE prestecs_id = {$this->prestecs_id};";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
+
        
 }
