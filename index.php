@@ -16,16 +16,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-    
+    <!-- responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Mostrar Productes</title>
 </head>
 
 <body>
-    <!--content start-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="container">
 
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php?controller=productes&action=mostrar_Productes">Productes</a>
@@ -34,35 +36,39 @@
                         <a class="nav-link active" aria-current="page" href="index.php?controller=prestecs&action=mostrar_Prestecs">Prestecs</a>
                     </li>
             </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="container mt-3">
+            <?php
+            require_once 'autoload.php';
+            if (isset($_GET['controller'])) {
+                $nom_controller = $_GET['controller'] . 'Controller';
+            } else {
+                echo "la pagina no existeix";
+                exit();
+            }
+
+            if (class_exists($nom_controller)) {
+
+                $controller = new $nom_controller();
+
+                if (isset($_GET['action']) && method_exists($controller, $_GET['action'])) {
+                    $action = $_GET['action'];
+                    $controller->$action();
+                } else {
+                    echo "la pagina no existeix";
+                }
+            } else {
+                echo "la pagina no existeix";
+            }
+            ?>
         </div>
-    </nav>
-
-    <?php
-    require_once 'autoload.php';
-    if (isset($_GET['controller'])) {
-        $nom_controller = $_GET['controller'] . 'Controller';
-    } else {
-        echo "la pagina no existeix";
-        exit();
-    }
-
-    if (class_exists($nom_controller)) {
-
-        $controller = new $nom_controller();
-
-        if (isset($_GET['action']) && method_exists($controller, $_GET['action'])) {
-            $action = $_GET['action'];
-            $controller->$action();
-        } else {
-            echo "la pagina no existeix";
-        }
-    } else {
-        echo "la pagina no existeix";
-    }
-    ?>
 
 
 
+
+    </div>
     <!--content end-->
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

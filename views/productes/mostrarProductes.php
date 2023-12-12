@@ -62,10 +62,6 @@
             </tfoot>
         </table>
         <script>
-            $(document).ready(function() {
-                $('#myTable').DataTable();
-            });
-
             new DataTable('#myTable', {
                 initComplete: function() {
                     this.api()
