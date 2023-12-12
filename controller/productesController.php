@@ -18,7 +18,7 @@ class productesController
     }
     public function guardar_Producte()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+        if (/*$_SERVER['REQUEST_METHOD'] === 'POST' && */isset($_POST['submit'])) {
             
             $producte = new productes();
             $producte->setProducte_nom($_POST['producte_nom']);
@@ -58,5 +58,13 @@ class productesController
         $productes->modificar();
 
         header("Location: index.php?controller=productes&action=mostrar_Productes");
+    }
+
+    public function Esborrar(){
+        $id = $_GET["id"];
+        $productes = new productes();
+        $productes->setProducte_id($id);
+        $productes->eliminar();
+        header("Location: index.php?controller=prestecs&action=mostrar_Productes");
     }
 }

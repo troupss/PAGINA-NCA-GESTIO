@@ -42,6 +42,10 @@
                         <td>
                             <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a>
                         </td>
+
+                        <td>
+                            <a href="index.php?controller=productes&action=EsborrarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Eliminar</button></a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
