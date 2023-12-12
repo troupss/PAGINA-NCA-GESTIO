@@ -115,14 +115,15 @@ class prestecs extends ModelBase{
 
     public function modificar(){
         $connexio = database::conectar();
-        $sql = "UPDATE prestecs SET prestecs_nom_producte = '$this->prestecs_nom_producte', prestecs_producte_id = '$this->prestecs_producte_id', prestecs_quantitat = '$this->prestecs_quantitat', prestecs_nom_destinatari = '$this->prestecs_nom_destinatari' WHERE id = '$this->prestecs_id'";
+        $sql = "UPDATE NCA_prestecs SET prestecs_nom_producte = '$this->prestecs_nom_producte', prestecs_producte_id = '$this->prestecs_producte_id', prestecs_quantitat = '$this->prestecs_quantitat', prestecs_nom_destinatari = '$this->prestecs_nom_destinatari' WHERE prestecs_id = '$this->prestecs_id'";
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
 
+
     public function mostrar(){
         $connexio = database::conectar();
-        $sql = "SELECT * FROM NCA_prestecs";
+        $sql = "SELECT * FROM NCA_prestecs WHERE prestecs_id = '$this->prestecs_id'";
         $result = mysqli_query($connexio, $sql);
         return $result;
     }

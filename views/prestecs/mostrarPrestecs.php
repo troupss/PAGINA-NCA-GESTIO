@@ -18,7 +18,7 @@
                         <td><?= $prestecs->prestecs_producte_id ?></td>
                         <td><?= $prestecs->prestecs_quantitat ?></td>
                         <td><?= $prestecs->prestecs_nom_destinatari ?></td>
-                        <td><a href="index.php?controller=prestecs&action=actualizar&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a></td>
+                        <td><a href="index.php?controller=prestecs&action=actualitzarPrestec&id=<?= $prestecs->prestecs_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
