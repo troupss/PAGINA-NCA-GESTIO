@@ -123,9 +123,10 @@ class productes extends ModelBase{
     }
 
     public function mostrar(){
+        $connexio = database::conectar();
         $sql = "SELECT * FROM NCA_productes WHERE producte_id = {$this->getProducte_id()}";
-        $producte = $this->db->query($sql);
-        return $producte->fetch_object();
+        $producte = mysqli_query($connexio, $sql);
+        return $producte;
     }
 
     public function modificar(){
