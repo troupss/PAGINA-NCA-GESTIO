@@ -116,17 +116,16 @@ class productes extends ModelBase{
 
     public function insertar_Producte(){
         $sql = "INSERT INTO NCA_productes (`producte_nom`, `producte_armari_id`, `producte_quantitat`, `foto` ) VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}', '{$this->getProducte_foto()}');";
-        var_dump($sql);
+        echo "No Has insertat un Producte Correctament!";
         $guardar = $this->db->query($sql);
         return $guardar;
         
     }
 
     public function mostrar(){
-        $connexio = database::conectar();
-        $sql = "SELECT * FROM NCA_productes WHERE producte_id = '$this->producte_id'";
-        $result = mysqli_query($connexio, $sql);
-        return $result;
+        $sql = "SELECT * FROM NCA_productes WHERE producte_id = {$this->getProducte_id()}";
+        $producte = $this->db->query($sql);
+        return $producte->fetch_object();
     }
 
     public function modificar(){
