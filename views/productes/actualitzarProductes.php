@@ -35,15 +35,15 @@
                             <div class="form-group mb-3">
                                 <label for="fname">NOM</label>
                                 <input type="hidden" name="producte_id" value="<?= $productes->producte_id ?>">
-                                <input type="text" name="producte_id" class="form-control" value="<?= $productes->producte_nom ?>">
+                                <input type="text" name="producte_nom" class="form-control" value="<?= $productes->producte_nom ?>">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="fname">Armari ID</label>
-                                <input type="text" name="producte_nom" class="form-control" value="<?= $productes->producte_armari_id ?>">
+                                <input type="text" name="producte_armari_id" class="form-control" value="<?= $productes->producte_armari_id ?>">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="fname">Quantitat</label>
-                                <input type="text" name="producte_armari_id" class="form-control" value="<?= $productes->producte_quantitat?>">
+                                <input type="text" name="producte_quantitat" class="form-control" value="<?= $productes->producte_quantitat?>">
                             </div>
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">

@@ -130,9 +130,10 @@ class productes extends ModelBase{
     }
 
     public function modificar(){
-        $sql = "UPDATE NCA_productes SET producte_nom = '{$this->getProducte_nom()}', producte_armari_id = '{$this->getProducte_armari_id()}', producte_quantitat = '{$this->getProducte_quantitat()}' WHERE producte_id = {$this->getProducte_id()}";
-        $guardar = $this->db->query($sql);
-        return $guardar;
+        $connexio = database::conectar();
+        $sql = "UPDATE NCA_productes SET producte_nom = '$this->producte_nom', producte_armari_id = '$this->producte_armari_id', producte_quantitat = '$this->producte_quantitat', foto = '$this->producte_foto' WHERE producte_id = '$this->producte_id'";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
     }
 
     public function eliminar(){
