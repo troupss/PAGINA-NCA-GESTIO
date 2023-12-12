@@ -44,7 +44,7 @@ class productesController
         $productes = new productes();
         $productes->setProducte_id($id);
         $producte = $productes->mostrar();
-        
+        echo "ola2";
         require_once "views/productes/actualitzarProductes.php";
     }
 
