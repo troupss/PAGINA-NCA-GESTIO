@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="text-center m-auto">
-                            <h4 class="text-uppercase text-center">Insertar Productos</h4>
+                            <h4 class="text-uppercase text-center">Insertar Productes</h4>
                         </div>
                         <form action="index.php?controller=productes&action=guardar_Producte" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
@@ -38,18 +38,17 @@
                                 <input type="number" name="armari_id" placeholder="Introdueix el ID del armari" class="form-control" required="">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="fname">Cantidad</label>
+                                <label for="fname">Quantitat</label>
                                 <input type="number" name="quantitat" placeholder="Introdueix la quantitat del producte" class="form-control" required="">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="fname">Opción de Foto</label>
+                                <label for="fname">Opció de Foto</label>
                                 <div class="d-flex">
                                     <button class="btn btn-primary mr-2" onclick="capturePhoto()">Tomar Foto</button>
                                     <input type="file" name="foto" id="fileInput" class="form-control">
                                 </div>
                             </div>
 
-                            <!-- ... (tu código existente) ... -->
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">
                                 <button class="btn btn-primary btn-block" type="submit" name="submit" id="submit">Insertar</button>

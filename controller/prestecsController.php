@@ -39,13 +39,11 @@ class prestecsController
         $prestecs->setPrestecsNomDestinatari($_POST["prestecs_nom_destinatari"]);
         $prestecs->modificar();
 
-        header("Location: index.php?controller=prestec&action=mostrartot");
+        header("Location: index.php?controller=prestec&action=mostrar_Prestecs");
         
     }
 
     public function actualizar(){
-
-        
         $prestecs = new prestecs();
         $prestecs->setPrestecsId($_GET["id"]);
         $row = $prestecs->mostrar();
