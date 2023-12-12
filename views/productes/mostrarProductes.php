@@ -39,6 +39,9 @@
                         <td><?= $productes->producte_armari_id ?></td>
                         <td><?= $productes->producte_quantitat ?></td>
                         <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
+                        <td>
+                            <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

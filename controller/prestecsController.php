@@ -22,7 +22,8 @@ class prestecsController
             $prestecs->setPrestecsProducteId($_POST['prestecs_producte_id']);
             $prestecs->setPrestecsQuantitat($_POST['prestecs_quantitat']);
             $prestecs->setPrestecsNomDestinatari($_POST['prestecs_nom_destinatari']);
-            $guardar = $prestecs->insertar("NCA_prestecs");
+            $guardar = $prestecs->insertar();
+            echo "hola1";
 
             header("Location: index.php?controller=prestecs&action=mostrar_Prestecs");
         }
