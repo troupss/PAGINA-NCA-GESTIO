@@ -116,7 +116,7 @@ class productes extends ModelBase{
 
     public function insertar_Producte(){
         $sql = "INSERT INTO NCA_productes (`producte_nom`, `producte_armari_id`, `producte_quantitat`, `foto` ) VALUES('{$this->getProducte_nom()}', '{$this->getProducte_armari_id()}', '{$this->getProducte_quantitat()}', '{$this->getProducte_foto()}');";
-        echo "No Has insertat un Producte Correctament!";
+        echo "No Has insertat un Producte correctament, revisa les dades i torna-ho a provar!";
         $guardar = $this->db->query($sql);
         return $guardar;
         
