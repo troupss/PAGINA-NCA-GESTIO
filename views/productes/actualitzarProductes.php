@@ -30,11 +30,11 @@
                         <div class="text-center m-auto">
                             <h4 class="text-uppercase text-center">Actualitzar Productes</h4>
                         </div>
-                        <form action="index.php?controller=prestecs&action=actualitzarAction" method="post">
+                        <form action="index.php?controller=productes&action=actualitzarAction" method="post">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
                                 <label for="fname">NOM</label>
-                                <input type="hidden" name="id" value="<?= $productes->producte_id ?>">
+                                <input type="hidden" name="producte_id" value="<?= $productes->producte_id ?>">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="fname">Producte ID</label>
