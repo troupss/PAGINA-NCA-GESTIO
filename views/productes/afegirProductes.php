@@ -51,8 +51,8 @@
                             </div>
 
                         </form>
-                        <br><a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Volver</button></a>
                     </div>
+                    <a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Volver</button></a>
                 </div>
             </div>
         </div>
