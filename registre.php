@@ -15,7 +15,7 @@
                         <div class="text-center m-auto">
                             <h4 class="text-uppercase text-center">Registre</h4>
                         </div>
-                        <form action="registre.php" method="post">
+                        <form action="index.php?controller=usuari&action=registrarUsuaris" method="post">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
                                 <label for="fname">USUARI </label>
@@ -53,7 +53,7 @@
     </div>
 
 
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
