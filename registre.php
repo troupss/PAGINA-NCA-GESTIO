@@ -15,16 +15,16 @@
                         <div class="text-center m-auto">
                             <h4 class="text-uppercase text-center">Registre</h4>
                         </div>
-                        <form action="index.php?controller=usuari&action=registrarUsuaris" method="post">
+                        <form action="registre.php" method="post">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
                                 <label for="fname">USUARI </label>
-                                <input type="text" name="nomusuari" placeholder="Introduexi el teu usuari" class="form-control" required="">
+                                <input type="text" name="nomusuari" id="username" placeholder="Introduexi el teu usuari" class="form-control" required="">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password">CONTRASENYA</label>
                                 <div class="input-group bg-light" id="show_hide_password">
-                                    <input type="password" class="form-control" name="contrasenya" id="" required placeholder="Introdueix la teva contrasenya">
+                                    <input type="password" class="form-control" name="contrasenya" id="password" required placeholder="Introdueix la teva contrasenya">
                                     <div class="input-group-addon">
                                         <a href=""><i class="fa fa-lg fa-eye" style="padding-top: 10px; padding-left: 10px; padding-right: 10px;" aria-hidden="true"></i></a>
                                     </div>
@@ -33,7 +33,7 @@
                             <div class="form-group mb-3">
                                 <label for="password">CONFIRMAR CONTRASENYA</label>
                                 <div class="input-group bg-light" id="show_hide_password">
-                                    <input type="password" class="form-control" name="contrasenya2" id="" required placeholder="Repeteix la teva contrasenya">
+                                    <input type="password" class="form-control" name="password2" id="password2" required placeholder="Repeteix la teva contrasenya">
                                 </div>
                             </div>
                             <div>
@@ -51,7 +51,35 @@
             </div>
         </div>
     </div>
+    <?php 
+    if (isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $password2 = $_POST['password2'];
 
+        if($password == $password2){
+            $sql = "SELECT * FROM usuaris WHERE username = '$username'";
+            $result = mysqli_query($connexio, $sql);
+            $num = mysqli_num_rows($result);
+            
+            if($num){
+                echo "El nom d'usuari ja existeix";
+            }else{
+                $contrasenya = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO NCA_usuaris (username, password) VALUES ('$username', '$contrasenya')";
+                $result = mysqli_query($connexio, $sql);
+
+                if($result){
+                    header("Location: login.php");
+                }else{
+                    echo "Error";
+                }    
+            }
+        }else{
+            echo "Les contrasenyes no coincideixen";
+        }
+    }
+    ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

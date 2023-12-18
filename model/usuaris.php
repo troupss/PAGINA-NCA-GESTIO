@@ -1,5 +1,5 @@
 <?php 
-require_once 'config/database.php';
+require_once "ModelBase.php";
 
 class usuaris extends ModelBase{
 
@@ -51,26 +51,5 @@ class usuaris extends ModelBase{
         $this->password = $password;
 
         return $this;
-    }
-
-    public function comprovarUsuari()
-    {
-        $connexio = database::conectar();
-        $sql = "SELECT * FROM NCA_usuaris WHERE username = '$this->username'";
-        $resultat = $connexio->query($sql);
-        if($resultat->num_rows > 0)
-        {
-            echo "Aquest usuari ja existeix";
-        }
-        else
-        {
-            $this->insertarUsuari();
-        }
-    }
-    public function insertarUsuari(){
-        $connexio = database::conectar();
-        $sql = "INSERT INTO NCA_usuaris (username, password) VALUES ('$this->username', '$this->password')";
-        $result = mysqli_query($connexio, $sql);
-        return $result;
     }
 }
