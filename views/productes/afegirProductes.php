@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="fname">Foto</label>
-                                <input type="file" name="foto" placeholder="Introdueix la foto del producte" class="form-control" required="">
+                                <input type="file" name="foto" placeholder="" class="form-control" required="">
 
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">

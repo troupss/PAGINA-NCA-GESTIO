@@ -33,7 +33,7 @@ class productesController
             move_uploaded_file($directorioTemp, $ruta . $nom);
             $producte->setProducte_foto($nom);
 
-            $guardar = $producte->insertar_Producte();
+            $producte->insertar_Producte();
 
             header("Location: index.php?controller=productes&action=mostrar_Productes");
         }
@@ -53,7 +53,15 @@ class productesController
         $productes->setProducte_nom($_POST["producte_nom"]);
         $productes->setProducte_armari_id($_POST["producte_armari_id"]);
         $productes->setProducte_quantitat($_POST["producte_quantitat"]);
-        $productes->setProducte_foto($_POST["foto"]);
+
+        $ruta = "img/";
+        $nom = $_FILES['foto']['name'];
+        $directorioTemp = $_FILES['foto']['tmp_name'];
+        $datahora = date('YmdHis');
+        $nom =  $datahora . $nom;
+        move_uploaded_file($directorioTemp, $ruta . $nom);
+        $productes->setProducte_foto($nom);
+            
         $productes->modificar();
 
         header("Location: index.php?controller=productes&action=mostrar_Productes");

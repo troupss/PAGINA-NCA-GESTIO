@@ -30,7 +30,7 @@
                         <div class="text-center m-auto">
                             <h4 class="text-uppercase text-center">Actualitzar Productes</h4>
                         </div>
-                        <form action="index.php?controller=productes&action=actualitzarAction" method="post">
+                        <form action="index.php?controller=productes&action=actualitzarAction" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
                                 <label for="fname">NOM</label>
@@ -45,6 +45,12 @@
                                 <label for="fname">Quantitat</label>
                                 <input type="text" name="producte_quantitat" class="form-control" value="<?= $productes->producte_quantitat?>">
                             </div>
+                            <div class="form-group mb-3">
+                                <label for="fname">Foto</label>
+                                <br>
+                                <img src="img/<?= $productes->foto ?>" alt="" width="100px">
+                                <input type="file" name="foto" placeholder="" class="form-control" value="<?=$productes->producte_foto?>">
+                            <br>
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">
                                 <button class="btn btn-outline-primary" type="submit" name="submit" id="submit">Actualitzar</button>
