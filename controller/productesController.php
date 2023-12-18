@@ -53,7 +53,7 @@ class productesController
         $productes->setProducte_nom($_POST["producte_nom"]);
         $productes->setProducte_armari_id($_POST["producte_armari_id"]);
         $productes->setProducte_quantitat($_POST["producte_quantitat"]);
-        //$productes->setProducte_foto($_POST["foto"]);
+        $productes->setProducte_foto($_POST["foto"]);
         $productes->modificar();
 
         header("Location: index.php?controller=productes&action=mostrar_Productes");

@@ -41,6 +41,9 @@
                                 <label for="fname">Quantitat</label>
                                 <input type="number" name="quantitat" placeholder="Introdueix la quantitat del producte" class="form-control" required="">
                             </div>
+                            <div class="form-group mb-3">
+                                <label for="fname">Foto</label>
+                                <input type="file" name="foto" placeholder="Introdueix la foto del producte" class="form-control" required="">
 
                             <br>
                             <div class="form-group mb-0 d-flex justify-content-between">
