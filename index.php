@@ -77,7 +77,7 @@
             ?>
         </div>
         
-        <a href = "login.php?logout-1"><button class="btn btn-outline-primary">Tancar Sessió</button></a>
+        <a href = "login.php?logout=1"><button class="btn btn-outline-primary">Tancar Sessió</button></a>
 
 
 
