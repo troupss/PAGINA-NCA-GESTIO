@@ -9,7 +9,7 @@
                     <th>Quantitat</th>
                     <th>Foto</th>
                     <th>Archivar</th>
-                    <th>Opcions</th>
+                    <th>Actualitzar</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
                         <td>
                             <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a> &nbsp;
 
-                            <a href="index.php?controller=productes&action=EsborrarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Eliminar</button></a>
+                            <!--<a href="index.php?controller=productes&action=EsborrarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Eliminar</button></a>-->
                         </td>
                     </tr>
                 <?php endwhile; ?>
