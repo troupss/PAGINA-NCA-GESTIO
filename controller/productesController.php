@@ -18,7 +18,7 @@ class productesController
     }
     public function guardar_Producte()
     {
-        if (/*$_SERVER['REQUEST_METHOD'] === 'POST' && */isset($_POST['submit'])) {
+        if (isset($_POST['submit'])) {
             
             $producte = new productes();
             $producte->setProducte_nom($_POST['producte_nom']);

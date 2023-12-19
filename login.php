@@ -25,7 +25,7 @@
                         <div class="text-center m-auto">
                             <h4 class="text-uppercase text-center">Login</h4>
                         </div>
-                        <form action="index.php?controller=usuari&action=loguearUsuari" method="post">
+                        <form action="login.php" method="post">
                             <input type="hidden" name="csrftoken" value="ea49375f43c7e6a59c77df1e4de562b3f1350124eeb70e5d5124e4ce3b5251c2b4d12e9aaf2a3ddc618c178c8dc4620b">
                             <div class="form-group mb-3">
                                 <label for="usuari">Usuari </label>
@@ -74,6 +74,39 @@
         </div>
     </div>
 
+
+
+<?php
+require_once 'model/ModelBase.php';
+session_start();
+if(isset($_POST['submit'])){
+    $username = $_POST['nomusuari'];
+    $password = $_POST['contrasenya'];
+
+    $sql = "SELECT * FROM NCA_usuaris WHERE username = '$username'";
+    $connexio = database::conectar();
+    $result = mysqli_query($connexio, $sql);
+
+    $num = mysqli_num_rows($result);
+    
+    if($num == 1){
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password, $row['password'])){
+            $_SESSION['username'] = $username;
+            header("Location: index.php?controller=productes&action=mostrar_Productes");
+        }else{
+            echo "Contrasenya incorrecta";
+        }
+    }else{
+        echo "Usuari incorrecte";
+    }
+    if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
+        session_destroy();
+        header("Location:login.php");
+    }  
+}
+
+?>
 <!--content end-->
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>

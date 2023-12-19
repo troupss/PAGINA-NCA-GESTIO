@@ -39,9 +39,21 @@
         </nav>
 
         <!-- Contenido principal -->
+        <?php
+            require_once 'autoload.php';
+        ?>
+        <div>
+            <?php
+            session_start();
+            if (isset($_SESSION['username'])) {
+                echo "<h1>Benvingut " . $_SESSION['username'] . "</h1>";
+            } else {
+                echo "<h1>Benvingut</h1>";
+            }
+            ?>
+        </div>
         <div class="container mt-3">
             <?php
-            require_once 'autoload.php';
             if (isset($_GET['controller'])) {
                 $nom_controller = $_GET['controller'] . 'Controller';
             } else {
@@ -64,7 +76,8 @@
             }
             ?>
         </div>
-
+        
+        <a href = "login.php?logout-1"><button class="btn btn-outline-primary">Tancar Sessió</button></a>
 
 
 
