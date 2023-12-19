@@ -7,8 +7,8 @@ class productesController
     public function mostrar_Productes()
     {
         $productes = new productes();
-        $productes = $productes->mostrar_amb_filtres();
-
+        $producte = $productes->mostrar_amb_filtres();
+        
         require_once "views/productes/mostrarProductes.php";
     }
 
@@ -80,5 +80,11 @@ class productesController
         $productes->setProducte_id($id);
         $productes->archivar();
         header("Location: index.php?controller=productes&action=mostrar_Productes");
+    }
+    public function mostrarArxivats(){
+        $productes = new productes();
+        $producte = $productes->mostrarArxivats();
+        
+        require_once "views/productes/mostrarArxivats.php";
     }
 }
