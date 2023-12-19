@@ -79,6 +79,7 @@
     <?php
     require_once 'model/ModelBase.php';
     @session_start();
+     
         if(isset($_POST['submit'])){
             $username = $_POST['nomusuari'];
             $password = $_POST['contrasenya'];
@@ -100,11 +101,13 @@
             }else{
                 echo "Usuari incorrecte";
             }
-            if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
-                session_destroy();
-                header("Location:login.php");
-            }  
+           
         }
+
+        if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
+            session_destroy();
+            header("Location:login.php");
+        } 
 
     ?>
 <!--content end-->

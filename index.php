@@ -19,7 +19,7 @@
     <!-- responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Mostrar Productes</title>
+    <title>Inici</title>
 </head>
 
 <body>
@@ -51,7 +51,8 @@
             if (isset($_SESSION['username'])) {
                 echo "<h1>Benvingut " . $_SESSION['username'] . "</h1>";
             } else {
-                echo "<h1>Benvingut</h1>";
+                header("Location:login.php");
+                
             }
             ?>
         </div>
