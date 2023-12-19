@@ -142,6 +142,17 @@ class productes extends ModelBase{
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
-
+    public function archivar(){
+        $connexio = database::conectar();
+        $sql = "UPDATE NCA_productes SET archivar = 1 WHERE producte_id = {$this->producte_id};";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
+    public function mostrar_amb_filtres(){
+        $connexio = database::conectar();
+        $sql = "SELECT * FROM NCA_productes WHERE archivar = 0";
+        $producte = mysqli_query($connexio, $sql);
+        return $producte;
+    }
     
 }
