@@ -76,37 +76,37 @@
 
 
 
-<?php
-require_once 'model/ModelBase.php';
-session_start();
-if(isset($_POST['submit'])){
-    $username = $_POST['nomusuari'];
-    $password = $_POST['contrasenya'];
+    <?php
+    require_once 'model/ModelBase.php';
+    @session_start();
+        if(isset($_POST['submit'])){
+            $username = $_POST['nomusuari'];
+            $password = $_POST['contrasenya'];
 
-    $sql = "SELECT * FROM NCA_usuaris WHERE username = '$username'";
-    $connexio = database::conectar();
-    $result = mysqli_query($connexio, $sql);
+            $sql = "SELECT * FROM NCA_usuaris WHERE username = '$username'";
+            $connexio = database::conectar();
+            $result = mysqli_query($connexio, $sql);
 
-    $num = mysqli_num_rows($result);
-    
-    if($num == 1){
-        $row = mysqli_fetch_assoc($result);
-        if(password_verify($password, $row['password'])){
-            $_SESSION['username'] = $username;
-            header("Location: index.php?controller=productes&action=mostrar_Productes");
-        }else{
-            echo "Contrasenya incorrecta";
+            $num = mysqli_num_rows($result);
+            
+            if($num == 1){
+                $row = mysqli_fetch_assoc($result);
+                if(password_verify($password, $row['password'])){
+                    $_SESSION['username'] = $username;
+                    header("Location: index.php?controller=productes&action=mostrar_Productes");
+                }else{
+                    echo "Contrasenya incorrecta";
+                }
+            }else{
+                echo "Usuari incorrecte";
+            }
+            if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
+                session_destroy();
+                header("Location:login.php");
+            }  
         }
-    }else{
-        echo "Usuari incorrecte";
-    }
-    if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
-        session_destroy();
-        header("Location:login.php");
-    }  
-}
 
-?>
+    ?>
 <!--content end-->
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
