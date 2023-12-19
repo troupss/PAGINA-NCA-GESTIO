@@ -7,7 +7,7 @@ class productesController
     public function mostrar_Productes()
     {
         $productes = new productes();
-        $producte = $productes->mostrar_tot("NCA_productes");
+        $productes = $productes->mostrar_amb_filtres();
 
         require_once "views/productes/mostrarProductes.php";
     }
@@ -72,6 +72,13 @@ class productesController
         $productes = new productes();
         $productes->setProducte_id($id);
         $productes->eliminar();
+        header("Location: index.php?controller=productes&action=mostrar_Productes");
+    }
+    public function archivarProducte(){
+        $id = $_GET["id"];
+        $productes = new productes();
+        $productes->setProducte_id($id);
+        $productes->archivar();
         header("Location: index.php?controller=productes&action=mostrar_Productes");
     }
 }
