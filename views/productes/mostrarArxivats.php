@@ -8,6 +8,7 @@
                     <th>Armari ID</th>
                     <th>Quantitat</th>
                     <th>Foto</th>
+                    <th>Desarchivar</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +19,8 @@
                         <td><?= $productes->producte_armari_id ?></td>
                         <td><?= $productes->producte_quantitat ?></td>
                         <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
+                        <td>
+                            <a href="index.php?controller=productes&action=desarchivarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Desarchivar</button></a>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

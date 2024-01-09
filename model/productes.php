@@ -160,5 +160,11 @@ class productes extends ModelBase{
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
+    public function desarchivar(){
+        $connexio = database::conectar();
+        $sql = "UPDATE NCA_productes SET archivat = 0 WHERE producte_id = {$this->producte_id};";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
     
 }

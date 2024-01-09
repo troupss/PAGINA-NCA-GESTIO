@@ -87,4 +87,12 @@ class productesController
         
         require_once "views/productes/mostrarArxivats.php";
     }
+    public function desarchivarProducte(){
+        $id = $_GET["id"];
+        $productes = new productes();
+        $productes->setProducte_id($id);
+        $productes->desarchivar();
+        header("Location: index.php?controller=productes&action=mostrarArxivats");
+    }
+
 }
