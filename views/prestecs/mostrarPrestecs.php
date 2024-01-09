@@ -1,8 +1,24 @@
 <div class="container mt-5">
     <h1>Llistat de Prestecs</h1>
+<<<<<<< HEAD
     <div class="table-responsive">
         <table id = "myTable" class="table table-bordered">
             <thead>
+=======
+    <table id="myTable" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Prestec Id</th>
+                <th>Nom del Producte</th>
+                <th>Producte Id</th>
+                <th>Quantitat del Producte</th>
+                <th>Nom del Destinatari</th>
+                <th>Opcions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($prestecs = $prestec->fetch_object()) : ?>
+>>>>>>> fc8dc79c6a0510f77df20046c464a51b4a7dbd9f
                 <tr>
                     <th>Prestec Id</th>
                     <th>Nom del Producte</th>
