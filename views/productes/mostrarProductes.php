@@ -1,44 +1,45 @@
     <div class="container mt-5">
         <h1>Llistat de Productes</h1>
-        <table id="myTable" class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Producte ID</th>
-                    <th>Producte Nom</th>
-                    <th>Armari ID</th>
-                    <th>Quantitat</th>
-                    <th>Foto</th>
-                    <th>Archivar</th>
-                    <th>Actualitzar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($productes = $producte->fetch_object()) : ?>
+        <div class="table-responsive">
+            <table id="myTable" class="table table-bordered">
+                <thead>
                     <tr>
-                        <td><?= $productes->producte_id ?></td>
-                        <td><?= $productes->producte_nom ?></td>
-                        <td><?= $productes->producte_armari_id ?></td>
-                        <td><?= $productes->producte_quantitat ?></td>
-                        <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
-                        <td>
-                            <a href="index.php?controller=productes&action=archivarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Archivar</button></a>
-                        <td>
-                            <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a> &nbsp;
-
-                            <!--<a href="index.php?controller=productes&action=EsborrarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Eliminar</button></a>-->
-                        </td>
+                        <th>Producte ID</th>
+                        <th>Producte Nom</th>
+                        <th>Armari ID</th>
+                        <th>Quantitat</th>
+                        <th>Foto</th>
+                        <th>Archivar</th>
+                        <th>Actualitzar</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Producte ID</th>
-                    <th>Producte Nom</th>
-                    <th>Armari ID</th>
-                    <th>Quantitat</th>
-                </tr>
-            </tfoot>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($productes = $producte->fetch_object()) : ?>
+                        <tr>
+                            <td><?= $productes->producte_id ?></td>
+                            <td><?= $productes->producte_nom ?></td>
+                            <td><?= $productes->producte_armari_id ?></td>
+                            <td><?= $productes->producte_quantitat ?></td>
+                            <td><img src="img/<?= $productes->foto ?>" alt="" width="100px"></td>
+                            <td>
+                                <a href="index.php?controller=productes&action=archivarProducte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Archivar</button></a>
+                            </td>
+                            <td>
+                                <a href="index.php?controller=productes&action=actualitzar_Producte&id=<?= $productes->producte_id ?>"><button class="btn btn-outline-primary">Actualitzar</button></a> &nbsp;
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Producte ID</th>
+                        <th>Producte Nom</th>
+                        <th>Armari ID</th>
+                        <th>Quantitat</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
         <script>
             new DataTable('#myTable', {
                 initComplete: function() {
@@ -74,3 +75,4 @@
             });
         </script>
         <a href="index.php?controller=productes&action=afegir_Producte"><button class="btn btn-outline-primary">Afegir Productes</button></a>
+    </div>

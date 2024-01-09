@@ -1,5 +1,6 @@
 <div class="container mt-5">
-        <h1>Llistat de Productes</h1>
+    <h1>Llistat de Productes</h1>
+    <div class="table-responsive">
         <table id="myTable" class="table table-bordered">
             <thead>
                 <tr>
@@ -33,37 +34,38 @@
                 </tr>
             </tfoot>
         </table>
-        <script>
-            new DataTable('#myTable', {
-                initComplete: function() {
-                    this.api()
-                        .columns()
-                        .every(function() {
-                            let column = this;
+    </div>
+    <script>
+        new DataTable('#myTable', {
+            initComplete: function() {
+                this.api()
+                    .columns()
+                    .every(function() {
+                        let column = this;
 
-                            // Create select element
-                            let select = document.createElement('select');
-                            select.add(new Option(''));
-                            column.footer().replaceChildren(select);
+                        // Create select element
+                        let select = document.createElement('select');
+                        select.add(new Option(''));
+                        column.footer().replaceChildren(select);
 
-                            // Apply listener for user change in value
-                            select.addEventListener('change', function() {
-                                var val = DataTable.util.escapeRegex(select.value);
+                        // Apply listener for user change in value
+                        select.addEventListener('change', function() {
+                            var val = DataTable.util.escapeRegex(select.value);
 
-                                column
-                                    .search(val ? '^' + val + '$' : '', true, false)
-                                    .draw();
-                            });
-
-                            // Add list of options
                             column
-                                .data()
-                                .unique()
-                                .sort()
-                                .each(function(d, j) {
-                                    select.add(new Option(d));
-                                });
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
                         });
-                }
-            });
-        </script>
+
+                        // Add list of options
+                        column
+                            .data()
+                            .unique()
+                            .sort()
+                            .each(function(d, j) {
+                                select.add(new Option(d));
+                            });
+                    });
+            }
+        });
+    </script>
