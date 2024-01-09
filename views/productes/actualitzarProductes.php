@@ -56,13 +56,12 @@
                                 <button class="btn btn-outline-primary" type="submit" name="submit" id="submit">Actualitzar</button>
                             </div>
                         </form>
-                        <a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Tornar</button></a>
                     </div>
                 </div>
             </div>
+            <a href="index.php?controller=productes&action=mostrar_Productes"><button class="btn btn-outline-primary">Tornar</button></a>
         </div>
     </div>
-    
     <?php
     ?>
     <!--content end-->
