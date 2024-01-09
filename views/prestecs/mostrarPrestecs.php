@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <h1>Llistat de Prestecs</h1>
-    <table class="table table-bordered">
+    <table id="myTable" class="table table-bordered">
         <thead>
             <tr>
                 <th>Prestec Id</th>
