@@ -25,10 +25,10 @@
         <input class="form-control" type="text" name="prestecs_nom_producte" id="prestecs_nom_producte" required>
 
         <label for="prestecs_producte_id">prestecs_producte_id</label>
-        <input class="form-control" type="text" name="prestecs_producte_id" id="prestecs_producte_id" required>
+        <input class="form-control" type="number" name="prestecs_producte_id" id="prestecs_producte_id" required>
 
         <label for="prestecs_quantitat">prestecs_quantitat</label>
-        <input class="form-control" type="text" name="prestecs_quantitat" id="prestecs_quantitat" required>
+        <input class="form-control" type="number" name="prestecs_quantitat" id="prestecs_quantitat" required>
 
         <label for="prestecs_nom_destinatari">prestecs_nom_destinatari</label>
         <input class="form-control" type="text" name="prestecs_nom_destinatari" id="prestecs_nom_destinatari" required>
